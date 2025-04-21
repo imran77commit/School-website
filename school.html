@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenwood International Academy | Premier Educational Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-dark: #002244;
+            --primary-light: #3d5a80;
+            --secondary: #E31937;
+            --secondary-dark: #c1121f;
+            --accent: #FFD700;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+            --shadow-xl: 0 15px 30px rgba(0,0,0,0.11), 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-color: #fefefe;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quick-links a {
+            color: rgba(255,255,255,0.8);
+            margin-left: 1.5rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .quick-links a i {
+            margin-right: 0.5rem;
+        }
+
+        .quick-links a:hover {
+            color: white;
+        }
+
+        /* Main Navigation */
+        .main-header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .main-header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        .main-nav > ul > li > a {
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .main-nav > ul > li > a:hover {
+            color: var(--secondary);
+        }
+
+        .main-nav > ul > li > a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .main-nav > ul > li > a:hover:after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Mega Menu */
+        .has-mega-menu .mega-menu {
+            position: absolute;
+            left: 0;
+            width: 100vw;
+            background: white;
+            box-shadow: var(--shadow-xl);
+            padding: 2rem 0;
+            display: none;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .has-mega-menu:hover .mega-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mega-menu-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .mega-menu-col h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+        }
+
+        .mega-menu-col ul {
+            display: block;
+        }
+
+        .mega-menu-col li {
+            margin: 0 0 0.8rem 0;
+        }
+
+        .mega-menu-col a {
+            font-weight: normal;
+            color: var(--dark);
+            transition: var(--transition);
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        .mega-menu-col a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, white);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            background: var(--light);
+            padding: 3rem 0;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .quick-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .quick-action-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .quick-action-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--secondary);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .quick-action-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quick-action-card:hover::before {
+            height: 100%;
+        }
+
+        .quick-action-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .quick-action-card:hover i {
+            color: white;
+        }
+
+        .quick-action-card h3 {
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .quick-action-card p {
+            color: var(--gray);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .quick-action-card:hover h3,
+        .quick-action-card:hover p {
+            color: white;
+        }
+
+        /* Featured Programs */
+        .programs-slider {
+            margin-top: 3rem;
+        }
+
+        .swiper {
+            padding: 2rem 0;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .program-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-category {
+            display: inline-block;
+            background: var(--primary-light);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-excerpt {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .news-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .news-date i {
+            margin-right: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-excerpt {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .read-more i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--secondary);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') center/cover;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .stats-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            background: var(--light);
+            padding: 5rem 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            margin: 1rem;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-content p {
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-col a i {
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .mega-menu-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .quick-actions-grid,
+            .stats-grid,
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                transition: var(--transition);
+                overflow-y: auto;
+            }
+
+            .main-nav.active {
+                left: 0;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                padding: 2rem;
+            }
+
+            .main-nav li {
+                margin: 0 0 1rem 0;
+            }
+
+            .main-nav > ul > li > a {
+                padding: 0.5rem 0;
+                display: block;
+            }
+
+            .has-mega-menu .mega-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                padding: 1rem 0 0 0;
+                display: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .mega-menu-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: auto;
+                min-height: auto;
+                padding: 8rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .quick-actions {
+                margin-top: 0;
+                padding: 2rem 0;
+            }
+
+            .quick-actions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item::after {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                height: 70px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-container">
+                <div>Welcome to Greenwood International Academy</div>
+                <div class="quick-links">
+                    <a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a>
+                    <a href="#"><i class="fas fa-envelope"></i> contact@greenwood.edu</a>
+                    <a href="#"><i class="fas fa-sign-in-alt"></i> Portal Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50x50" alt="Greenwood International Academy Logo">
+                    <div class="logo-text">
+                        <h1>Modern English Medium School</h1>
+                        <p>Excellence in Education Since 1985</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li class="has-mega-menu">
+                            <a href="#">About</a>
+                            <div class="mega-menu">
+                                <div class="container">
+                                    <div class="mega-menu-container">
+                                        <div class="mega-menu-col">
+                                            <h3>Our Institution</h3>
+                                            <ul>
+                                                <li><a href="#">History & Mission</a></li>
+                                                <li><a href="#">Leadership</a></li>
+                                                <li><a href="#">Accreditation</a></li>
+                                                <li><a href="#">Campus Tour</a></li>
+                                                <li><a href="#">Sustainability</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h3>Faculty & Staff</h3>
+                                            <ul>
+                                                <li><a href="#">Academic Departments</a></li>
+                                                <li><a href="#">Faculty Directory</a></li>
+                                                <li><a href="#">Staff Directory</a></li>
+                                                <li><a href="#">Faculty Resources</a></li>
+                                                <li><a href="#">Employment</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h3>Policies</h3>
+                                            <ul>
+                                                <li><a href="#">Academic Policies</a></li>
+                                                <li><a href="#">Code of Conduct</a></li>
+                                                <li><a href="#">Safety & Security</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#">Annual Reports</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="has-mega-menu">
+                            <a href="#">Academics</a>
+                            <div class="mega-menu">
+                                <div class="container">
+                                    <div class="mega-menu-container">
+                                        <div class="mega-menu-col">
+                                            <h3>Programs</h3>
+                                            <ul>
+                                                <li><a href="#">Elementary School</a></li>
+                                                <li><a href="#">Middle School</a></li>
+                                                <li><a href="#">High School</a></li>
+                                                <li><a href="#">IB Program</a></li>
+                                                <li><a href="#">Honors Program</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h3>Curriculum</h3>
+                                            <ul>
+                                                <li><a href="#">Course Catalog</a></li>
+                                                <li><a href="#">Graduation Requirements</a></li>
+                                                <li><a href="#">Academic Calendar</a></li>
+                                                <li><a href="#">Standardized Testing</a></li>
+                                                <li><a href="#">Learning Resources</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h3>Research</h3>
+                                            <ul>
+                                                <li><a href="#">Student Research</a></li>
+                                                <li><a href="#">Science Fair</a></li>
+                                                <li><a href="#">Publications</a></li>
+                                                <li><a href="#">Research Facilities</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Student Life</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Shaping Future Leaders Through Innovative Education</h1>
+                <p>Join our vibrant learning community dedicated to academic excellence, character development, and global citizenship.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn btn-primary">Apply Now</a>
+                    <a href="#" class="btn btn-outline">Explore Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <div class="quick-actions-grid">
+                <div class="quick-action-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Admissions</h3>
+                    <p>Learn about our application process and requirements</p>
+                </div>
+                <div class="quick-action-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Events</h3>
+                    <p>View our academic calendar and upcoming events</p>
+                </div>
+                <div class="quick-action-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Academics</h3>
+                    <p>Explore our programs and curriculum</p>
+                </div>
+                <div class="quick-action-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>Schedule a campus tour or virtual visit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Programs -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Featured Academic Programs</h2>
+                <p>Discover our diverse range of academic offerings designed to challenge and inspire students</p>
+            </div>
+            <div class="programs-slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="program-card">
+                                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="STEM Program" class="program-img">
+                                <div class="program-content">
+                                    <span class="program-category">STEM</span>
+                                    <h3 class="program-title">Advanced Science & Technology Program</h3>
+                                    <p class="program-excerpt">Our rigorous STEM curriculum prepares students for careers in science, technology, engineering, and mathematics.</p>
+                                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="program-card">
+                                <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Arts Program" class="program-img">
+                                <div class="program-content">
+                                    <span class="program-category">Arts</span>
+                                    <h3 class="program-title">Visual & Performing Arts</h3>
+                                    <p class="program-excerpt">Develop creative talents through our comprehensive arts program with state-of-the-art facilities.</p>
+                                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="program-card">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="IB Program" class="program-img">
+                                <div class="program-content">
+                                    <span class="program-category">International</span>
+                                    <h3 class="program-title">International Baccalaureate</h3>
+                                    <p class="program-excerpt">Our prestigious IB program offers a globally recognized curriculum for high-achieving students.</p>
+                                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="program-card">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sports Program" class="program-img">
+                                <div class="program-content">
+                                    <span class="program-category">Athletics</span>
+                                    <h3 class="program-title">Elite Sports Academy</h3>
+                                    <p class="program-excerpt">Combine academic excellence with athletic training in our competitive sports programs.</p>
+                                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Latest News & Announcements</h2>
+                <p>Stay updated with the latest happenings at Greenwood International Academy</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e100327743
+<!-- Continuing from previous code -->
+<!-- ====== TESTIMONIALS SECTION ====== -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Our Community Says</h2>
+            <p>Hear from students, parents, and faculty about their Greenwood experience</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Greenwood's IB program prepared me exceptionally well for university. The teachers go above and beyond to support student success."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <span>Class of 2022, now at Stanford</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"As a parent, I appreciate Greenwood's focus on holistic development. My child has grown academically and personally."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Chen">
+                    <div>
+                        <h4>David Chen</h4>
+                        <span>Parent of Grade 10 student</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Teaching at Greenwood allows me to work with motivated students and have access to excellent resources for innovative pedagogy."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Emily Rodriguez">
+                    <div>
+                        <h4>Dr. Emily Rodriguez</h4>
+                        <span>Science Department Head</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== GALLERY SECTION ====== -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Campus Life Gallery</h2>
+            <p>Explore moments from our vibrant school community</p>
+        </div>
+        
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="academics">Academics</button>
+            <button class="filter-btn" data-filter="arts">Arts</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- Gallery items would be added here -->
+            <div class="gallery-item academics">
+                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Science lab">
+                <div class="gallery-overlay">
+                    <h3>State-of-the-Art Science Lab</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item arts">
+                <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Art exhibition">
+                <div class="gallery-overlay">
+                    <h3>Annual Art Exhibition</h3>
+                </div>
+            </div>
+            
+            <!-- More gallery items would follow -->
+        </div>
+        
+        <div class="text-center">
+            <a href="#" class="btn btn-primary">View Full Gallery</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== UPCOMING EVENTS SECTION ====== -->
+<section class="events-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Upcoming Events</h2>
+            <p>Join us for these exciting upcoming activities</p>
+        </div>
+        
+        <div class="events-timeline">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span class="month">MAR</span>
+                </div>
+                <div class="event-details">
+                    <h3>Open House Day</h3>
+                    <p class="event-time"><i class="far fa-clock"></i> 9:00 AM - 3:00 PM</p>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Campus</p>
+                    <p>Prospective families are invited to tour our facilities and meet faculty.</p>
+                    <a href="#" class="event-rsvp">RSVP Now</a>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">22</span>
+                    <span class="month">MAR</span>
+                </div>
+                <div class="event-details">
+                    <h3>STEM Innovation Fair</h3>
+                    <p class="event-time"><i class="far fa-clock"></i> 10:00 AM - 4:00 PM</p>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Science Building</p>
+                    <p>Student projects showcasing innovations in science and technology.</p>
+                    <a href="#" class="event-rsvp">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- More events would follow -->
+        </div>
+    </div>
+</section>
+
+<!-- ====== CONTACT SECTION ====== -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Education Avenue<br>Academic City, AC 12345</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 (555) 123-4567<br>Admissions: ext. 100</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@greenwood.edu<br>admissions@greenwood.edu</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <p>Office Hours:<br>Monday-Friday: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Department</option>
+                            <option>Admissions</option>
+                            <option>Academic Inquiry</option>
+                            <option>General Information</option>
+                            <option>Alumni Relations</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Embedded Google Map -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2152091790357!2d-73.9883076845938!3d40.748440479327675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTMuNyJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<!-- ====== NEWSLETTER SECTION ====== -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-box">
+            <div class="newsletter-text">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest news and updates</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="school-logo-white.png" alt="Greenwood Logo" class="footer-logo">
+                <p>Greenwood International Academy provides a transformative educational experience that prepares students for success in college and beyond.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Admissions Process</a></li>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">School Policies</a></li>
+                    <li><a href="#">Employment Opportunities</a></li>
+                    <li><a href="#">Directions to Campus</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Parent Portal</a></li>
+                    <li><a href="#">Student Handbook</a></li>
+                    <li><a href="#">Library Resources</a></li>
+                    <li><a href="#">Technology Support</a></li>
+                    <li><a href="#">School Store</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@greenwood.edu</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Education Ave</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8AM-5PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Greenwood International Academy. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ====== STYLES FOR NEW SECTIONS ====== -->
+<style>
+    /* Testimonials Section */
+    .testimonials-section {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+    }
+    
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+    
+    .testimonial-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-content p {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+    }
+    
+    .testimonial-content p::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -10px;
+        font-size: 40px;
+        color: rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+    
+    .testimonial-author img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+    
+    .testimonial-author h4 {
+        margin-bottom: 5px;
+    }
+    
+    .testimonial-author span {
+        font-size: 14px;
+        color: #777;
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+        padding: 80px 0;
+    }
+    
+    .gallery-filter {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .filter-btn {
+        padding: 8px 20px;
+        background: #f1f1f1;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-btn.active {
+        background: var(--primary);
+        color: white;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .gallery-item {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 250px;
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .gallery-overlay {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        transition: bottom 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+        bottom: 0;
+    }
+    
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    /* Events Section */
+    .events-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    }
+    
+    .events-timeline {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .event-card {
+        display: flex;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .event-date {
+        background: var(--primary);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        min-width: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .event-date .day {
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 1;
+    }
+    
+    .event-date .month {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    
+    .event-details {
+        padding: 20px;
+        flex-grow: 1;
+    }
+    
+    .event-details h3 {
+        margin-bottom: 10px;
+    }
+    
+    .event-time, .event-location {
+        display: flex;
+        align-items: center;
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    
+    .event-time i, .event-location i {
+        margin-right: 8px;
+    }
+    
+    .event-rsvp {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--primary);
+        font-weight: 600;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+        padding: 80px 0 0;
+    }
+    
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+    
+    .contact-info h2 {
+        margin-bottom: 30px;
+    }
+    
+    .info-item {
+        display: flex;
+        margin-bottom: 25px;
+    }
+    
+    .info-item i {
+        font-size: 20px;
+        color: var(--primary);
+        margin-right: 15px;
+        margin-top: 3px;
+    }
+    
+    .contact-form {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: inherit;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+    }
+    
+    .map-container {
+        margin-top: 50px;
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+        padding: 60px 0;
+        background: var(--primary);
+        color: white;
+    }
+    
+    .newsletter-box {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .newsletter-text h2 {
+        color: white;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        flex-grow: 1;
+        max-width: 500px;
+    }
+    
+    .newsletter-form input {
+        flex-grow: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 50px 0 0 50px;
+    }
+    
+    .newsletter-form button {
+        border-radius: 0 50px 50px 0;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        padding: 0 25px;
+        cursor: pointer;
+    }
+    
+    /* Footer */
+    .main-footer {
+        background: #222;
+        color: #aaa;
+        padding: 60px 0 0;
+    }
+    
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-logo {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-col h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    
+    .footer-col ul {
+        list-style: none;
+    }
+    
+    .footer-col li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-col a {
+        color: #aaa;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-col a:hover {
+        color: white;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background: var(--secondary);
+        transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .footer-links {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-links a {
+        color: #aaa;
+    }
+</style>
+
+<!-- ====== JAVASCRIPT FOR NEW FUNCTIONALITY ====== -->
+<script>
+    // Gallery Filter Functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            const filterValue = button.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Thank you for your message. We will respond shortly.');
+            this.reset();
+        });
+    }
+    
+    // Newsletter Form Submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            alert(`Thank you for subscribing with ${emailInput.value}!`);
+            emailInput.value = '';
+        });
+    }
+    
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+    }
+    
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Initialize Swiper for Programs Slider
+    if (typeof Swiper !== 'undefined') {
+        const programsSwiper = new Swiper('.programs-slider .swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+    }
+</script>
+
+<!-- Include Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
